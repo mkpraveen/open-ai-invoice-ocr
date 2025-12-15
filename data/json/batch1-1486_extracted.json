@@ -1,0 +1,58 @@
+[
+    {
+        "invoice_no": "23285582",
+        "date_of_issue": "12/19/2015",
+        "seller": {
+            "name": "Harris-Green",
+            "address": "97868 Adam Parkways",
+            "city_state_zip": "Salazarshire, WI 44155",
+            "tax_id": "935-80-2834",
+            "iban": "GB11QYTR8328281828600"
+        },
+        "client": {
+            "name": "Good PLC",
+            "address": "55068 Dawn Mount Suite 471",
+            "city_state_zip": "Brookstown, KS 60292",
+            "tax_id": "993-98-0454"
+        },
+        "items": [
+            {
+                "item_no": "1",
+                "description": "16 Inches Marble Coffee Table Top Inlay with Multi Stone at Border Game Table",
+                "qty": "4,00",
+                "um": "each",
+                "net_price": "280,50",
+                "net_worth": "1 122,00",
+                "tax_percent": "10%",
+                "gross_worth": "1 234,20"
+            },
+            {
+                "item_no": "2",
+                "description": "6'x2' Black Large Dining Table Top Very Fine Handmade Marquetry Birds Art",
+                "qty": "5,00",
+                "um": "each",
+                "net_price": "5 303,66",
+                "net_worth": "26 518,30",
+                "tax_percent": "10%",
+                "gross_worth": "29 170,13"
+            },
+            {
+                "item_no": "3",
+                "description": "Luxurious Pattern Stone Dining Table Top Marble Conference Table Size 48 Inches",
+                "qty": "2,00",
+                "um": "each",
+                "net_price": "3 492,00",
+                "net_worth": "6 984,00",
+                "tax_percent": "10%",
+                "gross_worth": "7 682,40"
+            }
+        ],
+        "summary": {
+            "total": null,
+            "vat_percent": "10%",
+            "net_worth": "3 462,43",
+            "vat": "3 462,43",
+            "gross_worth": "38 086,73"
+        }
+    }
+]
