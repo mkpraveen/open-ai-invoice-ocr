@@ -1,0 +1,94 @@
+[
+    {
+        "Invoice no": "27301261",
+        "Date of issue": "10/09/2012",
+        "Seller": {
+            "name": "Williams LLC",
+            "address": "72074 Taylor Plains Suite 342 West Alexandria, AR 97978",
+            "tax id": "922-88-2832"
+        },
+        "Client": {
+            "name": "Hernandez-Anderson",
+            "address": "084 Carter Lane Apt. 846 South Ronaldsdur, AZ 91030",
+            "tax id": "959-74-5868"
+        },
+        "Items": [
+            {
+                "No.": "1",
+                "Description": "Lilly Pulitzer dress Size 2",
+                "Qty": "5.00",
+                "UM": "each",
+                "Net price": "45.00",
+                "Net worth": "225.00",
+                "VAT [%]": "10%",
+                "Gross worth": "247.50"
+            },
+            {
+                "No.": "2",
+                "Description": "New ERIN Fertherston Straight Dress White Sequence Lining Sleeveless SZ 10",
+                "Qty": "1.00",
+                "UM": "each",
+                "Net price": "59.99",
+                "Net worth": "59.99",
+                "VAT [%]": "10%",
+                "Gross worth": "65.99"
+            },
+            {
+                "No.": "3",
+                "Description": "Sequence dress Size Small",
+                "Qty": "3.00",
+                "UM": "each",
+                "Net price": "35.00",
+                "Net worth": "105.00",
+                "VAT [%]": "10%",
+                "Gross worth": "115.50"
+            },
+            {
+                "No.": "4",
+                "Description": "fire los angeles dress Medium",
+                "Qty": "3.00",
+                "UM": "each",
+                "Net price": "6.50",
+                "Net worth": "19.50",
+                "VAT [%]": "10%",
+                "Gross worth": "21.45"
+            },
+            {
+                "No.": "5",
+                "Description": "Eileen Fisher Women’s Long Sleeve Fleece Lined Front Pockets Dress XS Gray",
+                "Qty": "3.00",
+                "UM": "each",
+                "Net price": "15.99",
+                "Net worth": "47.97",
+                "VAT [%]": "10%",
+                "Gross worth": "52.77"
+            },
+            {
+                "No.": "6",
+                "Description": "Lularee Nicole Dress Size Small Light Solid Grey/ White Ringer Tee Trim",
+                "Qty": "2.00",
+                "UM": "each",
+                "Net price": "3.75",
+                "Net worth": "7.50",
+                "VAT [%]": "10%",
+                "Gross worth": "8.25"
+            },
+            {
+                "No.": "7",
+                "Description": "J Crew Collection Black & White Sweater Dress sz S",
+                "Qty": "1.00",
+                "UM": "each",
+                "Net price": "30.00",
+                "Net worth": "30.00",
+                "VAT [%]": "10%",
+                "Gross worth": "33.00"
+            }
+        ],
+        "Summary": {
+            "VAT [%]": "10%",
+            "Net worth": "4949.96",
+            "VAT": "49.50",
+            "Gross worth": "544.46"
+        }
+    }
+]

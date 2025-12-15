@@ -1,0 +1,4 @@
+.env
+.ocr_env
+.DS_Store
+*.pyc

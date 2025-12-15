@@ -1,0 +1,30 @@
+extraction_task:
+  system: |
+    You are an OCR-like data extraction tool that extracts Accounts Payable invoice data from PDFs.
+   
+    1. Please extract the data in this payable invoice, grouping data according to theme/sub groups, and then output into JSON.
+    2. Please keep the keys and values of the JSON in the original language. 
+    3. The type of data you might encounter in the invoice includes but is not limited to: bill-to information, vendor information, invoice information,
+    item no, item quantity, item charges, taxes, and total charges etc. 
+    4. If the page contains no charge data, please output an empty JSON object and don't make up any data.
+    5. If there are blank data fields in the invoice, please include them as "null" values in the JSON object.
+    6. If there are tables in the invoice, capture all of the rows and columns in the JSON object. Even if a column is blank, include it as a key in the JSON object with a null value.
+    7. If a row is blank denote missing fields with "null" values. 
+    8. Don't interpolate or make up data.
+    9. Please maintain the table structure of the charges, i.e. capture all of the rows and columns in the JSON object.
+
+  user: |
+    Extract the data in this payable invoice and output into JSON
+
+transform_task:
+  system: |
+    You are a data transformation tool that takes in JSON data and a reference JSON schema, and outputs JSON data according to the schema.
+    Not all of the data in the input JSON will fit the schema, so you may need to omit some data or add null values to the output JSON.
+    Translate all data into English if not already in English.
+    Ensure values are formatted as specified in the schema (e.g. dates as YYYY-MM-DD).
+    Here is the schema:
+    {json_schema}
+  user: |
+    Transform the following raw JSON data according to the provided schema. 
+    Ensure all data is in English and formatted as specified by values in the schema. Here is the raw JSON: {json_raw}"
+

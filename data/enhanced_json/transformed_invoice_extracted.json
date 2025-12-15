@@ -1,0 +1,67 @@
+{
+  "invoice_id": "27301261",
+  "invoice_date": "2012-09-10",
+  "due_date": null,
+  "vendor_info": {
+    "name": "Williams LLC",
+    "address": "72074 Taylor Plains Suite 342 West Alexandria, AR 97978",
+    "country": "USA"
+  },
+  "bill_to_info": {
+    "name": "Hernandez-Anderson",
+    "address": "084 Carter Lane Apt. 846 South Ronaldsdur, AZ 91030",
+    "country": "USA"
+  },
+  "total_amount": null,
+  "tax_amount": null,
+  "line_items": [
+    {
+      "description": "Lilly Pulitzer dress Size 2",
+      "quantity": 5.0,
+      "unit_price": 45.0,
+      "total": 225.0
+    },
+    {
+      "description": "New ERIN Fertherston Straight Dress White Sequence Lining Sleeveless SZ 10",
+      "quantity": 1.0,
+      "unit_price": 59.99,
+      "total": 59.99
+    },
+    {
+      "description": "Sequence dress Size Small",
+      "quantity": 3.0,
+      "unit_price": 35.0,
+      "total": 105.0
+    },
+    {
+      "description": "fire los angeles dress Medium",
+      "quantity": 3.0,
+      "unit_price": 6.5,
+      "total": 19.5
+    },
+    {
+      "description": "Eileen Fisher Women’s Long Sleeve Fleece Lined Front Pockets Dress XS Gray",
+      "quantity": 3.0,
+      "unit_price": 15.99,
+      "total": 47.97
+    },
+    {
+      "description": "Lularee Nicole Dress Size Small Light Solid Grey/ White Ringer Tee Trim",
+      "quantity": 2.0,
+      "unit_price": 3.75,
+      "total": 7.5
+    },
+    {
+      "description": "J Crew Collection Black & White Sweater Dress sz S",
+      "quantity": 1.0,
+      "unit_price": 30.0,
+      "total": 30.0
+    }
+  ],
+  "summary": {
+    "VAT [%]": "10%",
+    "Net worth": "4949.96",
+    "VAT": null,
+    "Gross worth": null
+  }
+}
