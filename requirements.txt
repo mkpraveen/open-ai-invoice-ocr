@@ -3,3 +3,11 @@ Pillow
 dotenv
 PyMuPDF
 PyYAML
+langgraph
+langchain
+langchain_openai
+streamlit
+ipython
+pyppeteer
+graphviz
+pygraphviz

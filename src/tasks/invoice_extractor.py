@@ -6,11 +6,11 @@ import fitz  # PyMuPDF
 from PIL import Image  # Pillow
 from openai import OpenAI
 from dotenv import load_dotenv
-from prompt_loader import PromptLoader
+from prompts.prompt_loader import PromptLoader
 
 class InvoiceExtractor:
 
-    def __init__(self, model_id="gemma3", prompt_file="prompts.yaml"):
+    def __init__(self, model_id="gemma3", prompt_file=os.path.abspath("src/prompts/prompts.yaml")):
         # Load environment variables
         load_dotenv()
         

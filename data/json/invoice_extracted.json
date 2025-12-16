@@ -2,16 +2,13 @@
     {
         "Invoice no": "27301261",
         "Date of issue": "10/09/2012",
-        "Seller": {
-            "name": "Williams LLC",
-            "address": "72074 Taylor Plains Suite 342 West Alexandria, AR 97978",
-            "tax id": "922-88-2832"
-        },
-        "Client": {
-            "name": "Hernandez-Anderson",
-            "address": "084 Carter Lane Apt. 846 South Ronaldsdur, AZ 91030",
-            "tax id": "959-74-5868"
-        },
+        "Seller": "Williams LLC",
+        "Client": "Hernandez-Anderson",
+        "Seller address": "72074 Taylor Plains Suite 342 West Alexandria, AR 97978",
+        "Client address": "084 Carter Lane Apt. 846 South Ronaldsdum, AZ 91030",
+        "Tax id": "922-88-2832",
+        "Client tax id": "959-74-5868",
+        "IBAN": "GB70FTN649199348221780",
         "Items": [
             {
                 "No.": "1",
@@ -55,7 +52,7 @@
             },
             {
                 "No.": "5",
-                "Description": "Eileen Fisher Women’s Long Sleeve Fleece Lined Front Pockets Dress XS Gray",
+                "Description": "Eileen Fisher Women's Long Sleeve Fleece Lined Front Pockets Dress XS Gray",
                 "Qty": "3.00",
                 "UM": "each",
                 "Net price": "15.99",
@@ -86,7 +83,7 @@
         ],
         "Summary": {
             "VAT [%]": "10%",
-            "Net worth": "4949.96",
+            "Net worth": "494.96",
             "VAT": "49.50",
             "Gross worth": "544.46"
         }

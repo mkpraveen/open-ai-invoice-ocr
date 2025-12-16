@@ -3,11 +3,11 @@ import os
 import json
 
 from dotenv import load_dotenv
-from schemas import InvoiceHeader 
-from prompt_loader import PromptLoader
+from schemas.schemas import InvoiceHeader 
+from prompts.prompt_loader import PromptLoader
 
 class InvoiceTransformer:
-    def __init__(self, model_id="llama3", prompt_file="prompts.yaml"):
+    def __init__(self, model_id="llama3", prompt_file=os.path.abspath("src/prompts/prompts.yaml")):
         # Load environment variables from .env
         load_dotenv()
 
@@ -24,8 +24,8 @@ class InvoiceTransformer:
                                           schema_class=InvoiceHeader)
         user_prompt = self.loader.get_prompt("transform_task", "user", json_raw=json_raw)
         
-        print("System Prompt - " + system_prompt)
-        print("User Prompt - " + user_prompt)
+        # print("System Prompt - " + system_prompt)
+        # print("User Prompt - " + user_prompt)
 
         response = self.client.chat.completions.create(
             model=self.model_id,
