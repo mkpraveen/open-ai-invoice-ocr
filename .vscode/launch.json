@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python:Streamlit",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "streamlit", // Invokes Streamlit as a module
+            "args": [
+                "run",
+                "${file}" // VS Code variable for the currently open file
+            ],
+            "console": "integratedTerminal", // Shows output in the integrated terminal
+            "justMyCode": true 
+        }
+    ]
+}

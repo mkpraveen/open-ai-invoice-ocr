@@ -15,16 +15,16 @@ def main():
     st.set_page_config(page_title="Invoice OCR", layout="wide")
     st.title("Invoice OCR with LangGraph Agents")
 
-    # Display the graph as png in streamlit
-    # write the bytes to graph.png
-    with open("graph.png", "wb") as f:
-        # f.write(inv_graph.get_graph().draw_mermaid_png(draw_method=MermaidDrawMethod.PYPPETEER, max_retries=5, retry_delay=2.0))
-        f.write(inv_graph.get_graph().draw_png())
-   
-    st.image("graph.png", caption="LangGraph Workflow", width=300)
+    expand = st.expander("LangGraph Workflow", icon=":material/info:")
+    # You can also use "with" notation:
+    with expand:
+        # Display the graph as png in streamlit
+        # write the bytes to graph.png
+        with open("graph.png", "wb") as f:
+            # f.write(inv_graph.get_graph().draw_mermaid_png(draw_method=MermaidDrawMethod.PYPPETEER, max_retries=5, retry_delay=2.0))
+            f.write(inv_graph.get_graph().draw_png())
     
-
-
+        st.image("graph.png", caption="LangGraph Workflow", width=300)
 
     # Ensure directories exist
     os.makedirs(UPLOAD_DIR, exist_ok=True)
@@ -52,32 +52,49 @@ def main():
                     "enhanced_json_path": ENHANCED_JSON_DIR
                 }
                 
-                final_state = None
+                raw_json_data_file_path = None
+                enhanced_json_data_file_path = None
+
+
                 for s in inv_graph.stream(inputs):
                     for key, value in s.items():
                         st.write(f"Node '{key}' finished.")
-                        if 'extracted_data_path' in value and value['extracted_data_path']:
-                             st.write(f"- Extracted data saved to: {value['extracted_data_path']}")
-                             final_state = value
-
+                        if 'extracted_data_file_path' in value and value['extracted_data_file_path']:
+                             st.write(f"- Extracted data saved to: {value['extracted_data_file_path']}")
+                             raw_json_data_file_path = value['extracted_data_file_path']
+                        if 'transformed_file_path' in value and value['transformed_file_path']:
+                             st.write(f"- Transformed data saved to: {value['transformed_file_path']}")
+                             enhanced_json_data_file_path = value['transformed_file_path']                    
 
                 status.update(label="Invoice processing complete!", state="complete", expanded=False)
 
             st.success("Invoice processed successfully!")
 
-            if final_state and final_state.get("extracted_data_path"):
-                # Construct the path to the transformed file
-                base_filename = os.path.basename(final_state["extracted_data_path"])
-                transformed_filename = f"transformed_{base_filename}"
-                transformed_file_path = os.path.join(ENHANCED_JSON_DIR, transformed_filename)
-
-                if os.path.exists(transformed_file_path):
+            # Create two containers in streamlit that shows both raw and tranformed json
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                if os.path.exists(enhanced_json_data_file_path):
                     st.subheader("Transformed JSON")
-                    with open(transformed_file_path, 'r') as f:
+                    with open(enhanced_json_data_file_path, 'r') as f:
                         transformed_data = json.load(f)
                     st.json(transformed_data)
                 else:
                     st.error("Transformed JSON file not found.")
+            with col2:
+                if os.path.exists(raw_json_data_file_path):
+                    st.subheader("Raw JSON")
+                    with open(raw_json_data_file_path, 'r') as f:
+                        raw_data = json.load(f)
+                    st.json(raw_data)
+                else:
+                    st.error("Raw JSON file not found.")
+            with col3:
+                if os.path.exists(file_path):
+                    st.subheader("Uploaded Image")
+                    st.image(file_path)
+                else:
+                    st.error("Uploaded image file not found.")
+
 
 
 if __name__ == "__main__":
