@@ -9,3 +9,7 @@ One of the below would be needed
 - Ollama local with Gemma 3 [[https://ollama.com/library/gemma3]] (vision capability), Llamma 3  [[https://ollama.com/library/llama3]]
 
 Note : code change needed on OpenAI object initialization 
+
+## Screenshots
+Example - UI
+![alt text](image.png)
