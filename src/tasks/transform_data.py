@@ -7,15 +7,12 @@ from schemas.schemas import InvoiceHeader
 from prompts.prompt_loader import PromptLoader
 
 class InvoiceTransformer:
-    def __init__(self, model_id="llama3", prompt_file=os.path.abspath("src/prompts/prompts.yaml")):
+    def __init__(self, model_id="gpt-4.1", prompt_file=os.path.abspath("src/prompts/prompts.yaml")):
         # Load environment variables from .env
         load_dotenv()
 
         # Use OpenAI with local Ollama 
-        self.client = OpenAI(
-            base_url="http://localhost:11434/v1",
-            api_key="ollama",
-        )
+        self.client = OpenAI()
         self.model_id = model_id
         self.loader = PromptLoader(prompt_file)
 

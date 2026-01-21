@@ -3,8 +3,8 @@ import os
 import uuid
 import json
 from inv_graph import inv_graph
-from IPython.display import Image, display
-from langchain_core.runnables.graph_mermaid import MermaidDrawMethod
+from typing import Optional
+import streamlit_mermaid as stmd
 
 # Define paths
 UPLOAD_DIR = os.path.abspath("data/images")
@@ -16,15 +16,15 @@ def main():
     st.title("Invoice OCR with LangGraph Agents")
 
     expand = st.expander("LangGraph Workflow", icon=":material/info:")
-    # You can also use "with" notation:
     with expand:
-        # Display the graph as png in streamlit
-        # write the bytes to graph.png
-        with open("graph.png", "wb") as f:
-            # f.write(inv_graph.get_graph().draw_mermaid_png(draw_method=MermaidDrawMethod.PYPPETEER, max_retries=5, retry_delay=2.0))
-            f.write(inv_graph.get_graph().draw_png())
-    
-        st.image("graph.png", caption="LangGraph Workflow", width=300)
+        mermaid_code: Optional[str] = None
+        try:
+            mermaid_code = inv_graph.get_graph().draw_mermaid()
+        except Exception as exc:
+            st.warning(f"Unable to render workflow diagram: {exc}")
+
+        if mermaid_code:
+            stmd.st_mermaid(mermaid_code)
 
     # Ensure directories exist
     os.makedirs(UPLOAD_DIR, exist_ok=True)
@@ -90,10 +90,28 @@ def main():
                     st.error("Raw JSON file not found.")
             with col3:
                 if os.path.exists(file_path):
-                    st.subheader("Uploaded Image")
-                    st.image(file_path)
+                    ext = os.path.splitext(file_path)[1].lower()
+                    if ext == ".pdf":
+                        st.subheader("Uploaded PDF")
+                        # with open(file_path, "rb") as pdf_file:
+                        #     pdf_base64 = base64.b64encode(pdf_file.read()).decode("utf-8")
+                        # st.components.v1.html(
+                        #     f"""
+                        #     <iframe
+                        #         src="data:application/pdf;base64,{pdf_base64}"
+                        #         width="100%"
+                        #         height="600"
+                        #         style="border: none;"
+                        #     ></iframe>
+                        #     """,
+                        #     height=600,
+                        # )
+                        st.pdf(file_path, height=600)
+                    else:
+                        st.subheader("Uploaded Image")
+                        st.image(file_path)
                 else:
-                    st.error("Uploaded image file not found.")
+                    st.error("Uploaded file not found.")
 
 
 

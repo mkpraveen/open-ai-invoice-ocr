@@ -10,15 +10,12 @@ from prompts.prompt_loader import PromptLoader
 
 class InvoiceExtractor:
 
-    def __init__(self, model_id="gemma3", prompt_file=os.path.abspath("src/prompts/prompts.yaml")):
+    def __init__(self, model_id="gpt-4o", prompt_file=os.path.abspath("src/prompts/prompts.yaml")):
         # Load environment variables
         load_dotenv()
         
         # Use OpenAI with local Ollama 
-        self.client = OpenAI(
-            base_url="http://localhost:11434/v1",
-            api_key="ollama",
-        )
+        self.client = OpenAI()
         self.model_id = model_id
         self.loader = PromptLoader(prompt_file)
 

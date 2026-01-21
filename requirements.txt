@@ -1,13 +1,23 @@
+# Core LLM + graph
 openai
-Pillow
-dotenv
-PyMuPDF
-PyYAML
-langgraph
 langchain
 langchain_openai
+langgraph
+
+# Data handling + OCR
+Pillow
+PyMuPDF
+PyYAML
+python-dotenv
+
+# App UI
 streamlit
+streamlit[pdf]
+streamlit-mermaid
+
+# Dev / utilities
 ipython
-pyppeteer
-graphviz
-pygraphviz
+
+# Optional: graph visualization backends (uncomment if needed)
+# graphviz
+# pygraphviz
